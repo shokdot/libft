@@ -1,26 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: healeksa <healeksa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/26 17:25:46 by healeksa          #+#    #+#             */
-/*   Updated: 2024/01/27 12:18:16 by healeksa         ###   ########.fr       */
+/*   Created: 2024/01/27 12:59:37 by healeksa          #+#    #+#             */
+/*   Updated: 2024/01/27 15:12:00 by healeksa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *src)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	int		i;
-	char	*addr;
+	size_t	i;
 
-	i = ft_strlen(src);
-	addr = (char *)malloc(sizeof(char) * (i + 1));
-	if (!addr)
-		return (0);
-	ft_strlcpy(addr, src, i + 1);
-	return (addr);
+	i = 0;
+	if (!dest && !src)
+		return (dest);
+	if (dest > src)
+	{
+		while (n > 0)
+		{
+			n--;
+			((char *)dest)[n] = ((char *)src)[n];
+		}
+	}
+	else
+	{
+		while (i < n)
+		{
+			((char *)dest)[i] = ((char *)src)[i];
+			i++;
+		}
+	}
+	return ((void *)dest);
 }

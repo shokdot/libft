@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: healeksa <healeksa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/26 17:25:46 by healeksa          #+#    #+#             */
-/*   Updated: 2024/01/27 12:18:16 by healeksa         ###   ########.fr       */
+/*   Created: 2024/01/27 17:37:04 by healeksa          #+#    #+#             */
+/*   Updated: 2024/01/27 18:12:43 by healeksa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *src)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int		i;
-	char	*addr;
-
-	i = ft_strlen(src);
-	addr = (char *)malloc(sizeof(char) * (i + 1));
-	if (!addr)
-		return (0);
-	ft_strlcpy(addr, src, i + 1);
-	return (addr);
+	if (n <= -2147483648)
+	{
+		ft_putchar_fd('-', fd);
+		ft_putchar_fd('2', fd);
+		ft_putnbr_fd(147483648, fd);
+	}
+	else if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		n = n * -1;
+		ft_putnbr_fd(n, fd);
+	}
+	else if (n > 9)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
+	}
+	else
+		ft_putchar_fd(n + '0', fd);
 }

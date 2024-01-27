@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: healeksa <healeksa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/26 17:25:46 by healeksa          #+#    #+#             */
-/*   Updated: 2024/01/27 12:18:16 by healeksa         ###   ########.fr       */
+/*   Created: 2024/01/27 17:08:43 by healeksa          #+#    #+#             */
+/*   Updated: 2024/01/27 17:26:58 by healeksa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *src)
+void	ft_putchar_fd(char c, int fd)
 {
-	int		i;
-	char	*addr;
-
-	i = ft_strlen(src);
-	addr = (char *)malloc(sizeof(char) * (i + 1));
-	if (!addr)
-		return (0);
-	ft_strlcpy(addr, src, i + 1);
-	return (addr);
+	write (fd, &c, 1);
 }

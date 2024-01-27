@@ -6,7 +6,7 @@
 /*   By: healeksa <healeksa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 17:38:37 by healeksa          #+#    #+#             */
-/*   Updated: 2024/01/26 18:01:20 by healeksa         ###   ########.fr       */
+/*   Updated: 2024/01/27 16:34:24 by healeksa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ void	*ft_calloc(size_t num, size_t size)
 	dest = malloc(num * size);
 	if (!dest)
 		return (0);
-	ft_bzero(dest, num * size);
+	ft_memset(dest, 0, num * size);
 	return (dest);
 }
