@@ -25,7 +25,8 @@ SRC = ft_atoi.c \
 	ft_strnstr.c \
 	ft_strrchr.c \
 	ft_tolower.c \
-	ft_toupper.c
+	ft_toupper.c \
+	ft_substr.c
 
 OBJS = $(SRC:.c=.o)
 RM = rm -f
@@ -35,7 +36,7 @@ all:$(NAME)
 
 $(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)
-	ranlib $(OBJS)
+	ranlib $(NAME)
 
 clean:
 	$(RM) $(OBJS)

@@ -6,7 +6,7 @@
 /*   By: healeksa <healeksa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 13:20:10 by healeksa          #+#    #+#             */
-/*   Updated: 2024/01/27 17:38:54 by healeksa         ###   ########.fr       */
+/*   Updated: 2024/01/28 11:40:34 by healeksa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_atoi(const char *str);
 void	*ft_calloc(size_t num, size_t size);
 char	*ft_strdup(const char *src);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
