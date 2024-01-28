@@ -6,7 +6,7 @@
 /*   By: healeksa <healeksa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 16:23:47 by healeksa          #+#    #+#             */
-/*   Updated: 2024/01/26 16:24:35 by healeksa         ###   ########.fr       */
+/*   Updated: 2024/01/28 15:18:37 by healeksa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,5 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t n)
 		}
 		dst[i] = 0;
 	}
-	while (src[i])
-		i++;
-	return (i);
+	return (ft_strlen(src));
 }
