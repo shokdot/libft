@@ -33,7 +33,18 @@ SRC = ft_atoi.c \
 	ft_strtrim.c \
 	ft_itoa.c
 
+BONUS_SRC = ft_lstnew.c \
+	ft_lstadd_front.c \
+	ft_lstsize.c \
+	ft_lstlast.c \
+	ft_lstadd_back.c \
+	ft_lstdelone.c \
+	ft_lstclear.c \
+	ft_lstiter.c \
+	ft_lstmap.c
+
 OBJS = $(SRC:.c=.o)
+BOUNUS_OBJS = $(BONUS_SRC:.c=.o)
 RM = rm -f
 C_FLAGS = -Wall -Wextra -Werror -c
 
@@ -43,8 +54,12 @@ $(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
 
+bonus:	$(BOUNUS_OBJS)
+	ar rc $(NAME) $(BOUNUS_OBJS)
+	ranlib $(NAME)
+
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(BOUNUS_OBJS)
 
 fclean: clean
 	$(RM) $(NAME)
@@ -54,4 +69,4 @@ re:fclean all
 %.o:%.c
 	cc $(C_FLAGS) $< -o $@
 
-.PHONY: all clean fclean re
+.PHONY: all bonus clean fclean re
