@@ -36,9 +36,3 @@ To create that library, after downloading/cloning this project, **cd** into the 
 	git clone https://github.com/shokdot/libft
 	cd libft
 	make
-
-## Sponsors
-
-[1]: https://github.com/shokdot/libft/blob/master/en.subject.pdf "Libft PDF"
-[2]: https://42yerevan.am/ "42 Yerevan"
-[3]: https://github.com/alelievr/libft-unit-test
